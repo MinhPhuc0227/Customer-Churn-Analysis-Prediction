@@ -1,5 +1,123 @@
 # Customer Churn Analysis & Prediction
 
+## Giới thiệu
+
+Dự án thực hiện phân tích hành vi khách hàng và xây dựng mô hình Machine Learning
+để dự đoán khả năng khách hàng rời bỏ dịch vụ (Customer Churn) bằng bộ dữ liệu
+Telco Customer Churn.
+
+Mục tiêu của dự án là xác định các yếu tố chính liên quan đến việc khách hàng
+rời bỏ và đưa ra các insight kinh doanh nhằm hỗ trợ xây dựng chiến lược giữ chân
+khách hàng.
+
+## Mục tiêu
+
+- Phân tích đặc điểm khách hàng và xu hướng rời bỏ dịch vụ
+- Xác định các yếu tố chính liên quan đến Customer Churn
+- So sánh và đánh giá các mô hình Machine Learning khác nhau
+- Lựa chọn mô hình phù hợp để dự đoán Customer Churn
+- Chuyển đổi kết quả phân tích thành các đề xuất hỗ trợ giữ chân khách hàng
+
+## Dataset
+
+Bộ dữ liệu gồm **7.043 bản ghi khách hàng** với **21 thuộc tính**, bao gồm thông
+tin khách hàng, dịch vụ sử dụng, thông tin tài khoản, thanh toán và trạng thái
+rời bỏ dịch vụ.
+
+**Nguồn:** [Kaggle – Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+
+## Quy trình phân tích
+
+### 1. Chuẩn bị dữ liệu
+- Làm sạch và tiền xử lý dữ liệu
+- Xử lý các giá trị thiếu và không nhất quán
+- Biến đổi và mã hóa đặc trưng
+- Chuẩn hóa dữ liệu
+
+### 2. Phân tích khám phá dữ liệu (EDA)
+- Phân tích đặc điểm khách hàng và xu hướng Customer Churn
+- Trực quan hóa mối quan hệ giữa các thuộc tính và khả năng rời bỏ
+- Xác định các yếu tố tiềm năng liên quan đến Customer Churn
+
+### 3. Feature Engineering
+- Mã hóa các biến phân loại
+- Chuẩn hóa các biến số
+- Chuẩn bị dữ liệu đầu vào cho các mô hình Machine Learning
+
+### 4. Xây dựng & đánh giá mô hình
+
+Đánh giá **9 mô hình Machine Learning** bằng phương pháp **5-fold Cross-Validation**:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- AdaBoost
+- Gradient Boosting
+- XGBoost
+- LightGBM
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+
+Các mô hình được đánh giá bằng các chỉ số Accuracy, F1-Score, Confusion Matrix
+và ROC-AUC.
+
+## Kết quả
+
+**Logistic Regression** được lựa chọn là mô hình tối ưu với độ chính xác trung
+bình khoảng **80%**.
+
+Mô hình đạt **F1-Score = 0.598** đối với lớp Churn.
+
+### Các yếu tố chính ảnh hưởng đến Customer Churn
+
+Phân tích xác định một số yếu tố quan trọng liên quan đến khả năng khách hàng
+rời bỏ:
+
+- Loại hợp đồng
+- Thời gian sử dụng dịch vụ (Tenure)
+- Phí dịch vụ hàng tháng (Monthly Charges)
+
+Các yếu tố này có thể được sử dụng để xác định nhóm khách hàng có nguy cơ
+rời bỏ cao hơn.
+
+## Business Insights
+
+Dựa trên kết quả phân tích, doanh nghiệp có thể tập trung vào các khách hàng
+có nguy cơ rời bỏ cao bằng cách xem xét các yếu tố như loại hợp đồng, thời gian
+sử dụng dịch vụ và phí hàng tháng.
+
+Các kết quả này có thể hỗ trợ doanh nghiệp xác định khách hàng có nguy cơ rời
+bỏ và xây dựng các chiến lược giữ chân phù hợp.
+
+## Công nghệ sử dụng
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Jupyter Notebook / Google Colab
+
+## Hướng dẫn chạy trên Google Colab
+
+1. **Tải dataset** từ [Kaggle – Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
+2. Mở file `Customer_Churn_Analysis.ipynb` bằng Google Colab.
+3. Upload file dataset `WA_Fn-UseC_-Telco-Customer-Churn.csv` vào môi trường Google Colab.
+4. Chạy lần lượt các cell từ trên xuống dưới.
+
+### Đọc dataset
+
+Notebook đọc dataset trực tiếp từ file CSV đã upload vào Google Colab:
+
+```python
+dataset = pd.read_csv("/WA_Fn-UseC_-Telco-Customer-Churn.csv") 
+```
+
+---
+
+# English Version
+
 ## Overview
 
 This project analyzes customer behavior and develops a machine learning model to predict customer churn using the Telco Customer Churn dataset.
