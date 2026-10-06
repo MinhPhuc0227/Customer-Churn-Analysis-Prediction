@@ -85,3 +85,17 @@ The findings can support businesses in identifying at-risk customers and develop
 - Matplotlib
 - Seaborn
 - Jupyter Notebook / Google Colab
+
+## How to Run in Google Colab
+
+1. **Download the dataset** from [Kaggle – Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
+2. Open `Customer_Churn_Analysis.ipynb` in Google Colab.
+3. Upload the downloaded dataset file `WA_Fn-UseC_-Telco-Customer-Churn.csv` to the Colab environment.
+4. Run the notebook cells sequentially from top to bottom.
+
+### Dataset Loading
+
+The notebook loads the dataset directly from the uploaded CSV file:
+
+```python
+dataset = pd.read_csv("/WA_Fn-UseC_-Telco-Customer-Churn.csv")
